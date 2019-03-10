@@ -1,6 +1,6 @@
 # 02 模型评估与选择
 
-## 基本概念
+## 2.1 基本概念
 
 - 精度(accuracy) = 1 - 错误率 = 1 - a/m
 - 训练误差(training error) = 经验误差(empirical error): 在训练集上的误差
@@ -17,15 +17,15 @@
 - 测试集(testing set): 研究不同学习算法的泛化性能(对新样本的判别能力)，以测试误差作为泛化误差的近似，测试集应尽量与训练集互斥
 - 验证集(validation set): 基于验证集上的性能进行模型选择和调参
 
-## 评估方法
+## 2.2 评估方法
 
-### 留出法(hold-out)
+### 2.2.1 留出法(hold-out)
 
 - 直接将数据集 D 划分为训练集 S 和测试集 T，S 和 T 互斥
     - 分层采样(stratified sampling): 保留类别比例的采样
     - |S|/|D| 大小选择：通常为 2/3 - 4/5
 
-### k折交叉验证法(k-fold cross validation)
+### 2.2.2 k折交叉验证法(k-fold cross validation)
 
 - 将 D 划分为 k 个大小相似的互斥子集，每个子集 Di 通过分层采样得到
     - 每次用 k-1 个子集的并作为训练集，剩余的作为测试集，一共可进行 k 次训练和测试
@@ -33,7 +33,7 @@
     - 通常使用不同的划分重复 p(=10) 次，即 p 次 k 折交叉验证
 <div align="center"><img src="./_images/2.2.2-1.png" height="300px" /></div>
 
-### 自助法(bootstrapping)
+### 2.2.3 自助法(bootstrapping)
 
 - 数据集 D 的大小为 m，有放回取样 m 个样本作为训练集 D',剩余的 D\D' 作为测试集
     - 样本在 m 次采样中始终不被采样的概率为：
@@ -41,21 +41,21 @@
     - 即训练集 D' 大小约为 2/3
     - 在数据集较小、难以有效划分训练集/测试集时很有用，但会改变初始数据集分布，引入估计偏差
 
-### 调参(parameter tuning)
+### 2.2.4 调参(parameter tuning)
 
 - 设定算法参数，常用做法是对每个参数选定一个范围和变化步长
 
-## 性能度量
+## 2.3 性能度量
 
 - 性能度量(performance measure): 衡量模型泛化能力的评价标准
 - 均方误差(mean squared error) 回归任务常用
   <div align="center"><img src="./_images/2.3.0-1.png" height="60px" /></div>
 
-### 错误率与精度
+### 2.3.1 错误率与精度
 
 <div align="center"><img src="./_images/2.3.1-1.png" height="200px" /></div>
 
-### 准确率 召回率 F1
+### 2.3.2 准确率 召回率 F1
 
 - 准确率："挑出的🍉中有多少是好瓜"
 - 召回率："所有的好🍉中有多少比例被挑出来了"
@@ -74,18 +74,34 @@
     - 微准确率, 微召回率, 微 F1：
       <div align="center"><img src="./_images/2.3.2-5.png" height="100px" /></div>
 
-### ROC AUC
+### 2.3.3 ROC AUC
 
 - ROC = Receiver Operating Characteristic 受试者工作特征
     - 纵坐标为真正例率(TP Rate)，横坐标为假正例率(FP Rate)
     - 预测概率从大到小排列后，将 cut point 依次设置为每个概率值计算其 TPR 和 FPR
     - 对角线对应于"随机乱猜"模型
-      <div align="center"><img src="./_images/2.3.3-1.png" height="150px" /></div>
-      <div align="center"><img src="./_images/2.3.3-2.png" height="300px" /></div>
+      <div align="center"><img src="./_images/2.3.3-1.png" height="100px" /></div>
+      <div align="center"><img src="./_images/2.3.3-2.png" height="250px" /></div>
 - 衡量不同 ROC 曲线的性能
     - A 完全包住 B：A 优于 B
     - AUC = Area Under ROC Curve
 
-### 代价敏感错误率
+### 2.3.4 代价敏感错误率
 
 - 思想：不同类型的错误(FP/FN)代价不同，计算损失的时候要考虑非均等代价(unequal cost)
+
+## 2.4 比较检验
+
+*统计假设检验的内容，boring*
+
+## 2.5 偏差和方差
+
+- 偏差-方差分解(bias-variance decomposition): 解释学习算法泛化性能的重要工具
+- 泛化误差 = 偏差 + 方差 + 噪声
+  <div align="center"><img src="./_images/2.5.0-1.png" height="250px" /></div>
+  <div align="center"><img src="./_images/2.5.0-2.png" height="60px" /></div>
+    - 偏差(bias): 度量与真实结果的偏离程度 -> **学习算法的拟合能力**
+    - 方差(variance): 度量训练集变动导致的性能变化 -> **数据扰动造成的影响**
+    - 噪声: 期望泛化误差的下界 -> **学习问题本身的难度**  
+- 偏差和方差是一对矛盾，称为偏差-方差窘境(bias-variance dilemma)
+  <div align="center"><img src="./_images/2.5.0-3.png" height="250px" /></div>
