@@ -10,14 +10,14 @@
 
 ## 4.2 划分选择
 
-- 决策树学习的关键是**"从属性集 A 中选择最优划分属性 a\*"**
+- 决策树学习的关键是**从属性集 A 中选择最优划分属性 a\***
 - 随着划分不断进行，希望决策树的分支节点所包含的样本尽可能属于同一类别，即节点的 **purity(纯度)** 越来越高。
 
 ### 4.2.1 信息增益
 
 - **ID3 决策树算法**就是以**信息增益**为准则来选择划分属性
 - 信息熵(information entropy)
-  <div align="center"><img src="./_images/4.2.1-1.png" height="40px" /></div>
+  <div align="center"><img src="./_images/4.2.1-1.png" height="60px" /></div>
 - 信息增益(information gain)
   <div align="center"><img src="./_images/4.2.1-2.png" height="250px" /></div>
 - 信息增益越大，意味着使用属性 a 来进行划分所获得的"纯度提升"越大
@@ -35,5 +35,5 @@
 
 - **CART 决策树算法**使用基尼指数选择划分属性：选择**划分后基尼指数最小**的属性作为最优划分属性
 - 基尼指数(Gini index): **反映了从数据集 D 中随机抽取两个样本，其类别标记不一致的概率**
-  <div align="center"><img src="./_images/4.2.3-1.png" height="80px" /></div>
-  <div align="center"><img src="./_images/4.2.3-2.png" height="40px" /></div>
+  <div align="center"><img src="./_images/4.2.3-1.png" height="120px" /></div>
+  <div align="center"><img src="./_images/4.2.3-2.png" height="60px" /></div>
