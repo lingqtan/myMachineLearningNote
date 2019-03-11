@@ -54,7 +54,7 @@
 ### 3.5.3 MvM = Many vs. Many
 
 - 每次将若干个类作为正类，若干个类作为反类，构造正反类的方法为**纠错输出码(ECOC)**
-  <div align="center"><img src="./_images/3.5.3-1.png" height="300px" /></div>
+  <div align="center"><img src="./_images/3.5.3-1.png" height="250px" /></div>
 - 测试阶段，ECOC 编码对分类器的错误有一定纠错能力，编码越长纠错能力越大
 - 但确定最优编码本身是 NP-hard 问题
 
