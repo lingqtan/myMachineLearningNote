@@ -4,18 +4,18 @@
 
 - 线性模型(linear model)试图学得一个通过属性的线性组合进行预测的函数 f(x)
 - ω表达了各属性在预测中的重要性，有很好的解释性(comprehensibility)
-  <div align="center"><img src="./_images/3.1.0-1.png" height="150px" /></div>
+  <div align="center"><img src="./_images/3.1.0-1.png" height="100px" /></div>
 
 ## 3.2 线性回归
 
 - 最小二乘法(least square method): 基于均方误差最小化进行模型求解的方法，在线性回归中，试图找到一个直线，使所有样本到直线的欧式距离之和最小。
 - 一元情况 x_i = (x_i1)
-  <div align="center"><img src="./_images/3.2.0-1.png" height="150px" /></div>
+  <div align="center"><img src="./_images/3.2.0-1.png" height="100px" /></div>
 - 多元情况 x_i = (x_i1; x_i2; ... x_id)
-  <div align="center"><img src="./_images/3.2.0-2.png" height="400px" /></div>
+  <div align="center"><img src="./_images/3.2.0-2.png" height="300px" /></div>
     - 实际任务中，属性个数可能非常多甚至超过样例数，此时可解出多个 ω^ 它们都能使均方误差最小化，选择哪一个解作为输出由归纳偏好决定，常见做法是**引入正则化(regularization)项**
 - 对数线性回归(log-linear regression)
-  <div align="center"><img src="./_images/3.2.0-3.png" height="30px" /></div>
+  <div align="center"><img src="./_images/3.2.0-3.png" height="60px" /></div>
 
 ## 3.3 对数几率回归
 
