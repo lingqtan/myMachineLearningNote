@@ -99,9 +99,9 @@
 - 偏差-方差分解(bias-variance decomposition): 解释学习算法泛化性能的重要工具
 - 泛化误差 = 偏差 + 方差 + 噪声
   <div align="center"><img src="./_images/2.5.0-1.png" height="250px" /></div>
-  <div align="center"><img src="./_images/2.5.0-2.png" height="60px" /></div>
-    - 偏差(bias): 度量与真实结果的偏离程度 -> **学习算法的拟合能力**
-    - 方差(variance): 度量训练集变动导致的性能变化 -> **数据扰动造成的影响**
-    - 噪声: 期望泛化误差的下界 -> **学习问题本身的难度**  
+  <div align="center"><img src="./_images/2.5.0-2.png" height="30px" /></div>
+    - 偏差(bias): 度量与真实结果的偏离程度 \-\> **学习算法的拟合能力**
+    - 方差(variance): 度量训练集变动导致的性能变化 \-\> **数据扰动造成的影响**
+    - 噪声: 期望泛化误差的下界 \-\> **学习问题本身的难度**  
 - 偏差和方差是一对矛盾，称为偏差-方差窘境(bias-variance dilemma)
   <div align="center"><img src="./_images/2.5.0-3.png" height="250px" /></div>
