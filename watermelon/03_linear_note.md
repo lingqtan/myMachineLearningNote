@@ -12,7 +12,7 @@
 - 一元情况 x_i = (x_i1)
   <div align="center"><img src="./_images/3.2.0-1.png" height="100px" /></div>
 - 多元情况 x_i = (x_i1; x_i2; ... x_id)
-  <div align="center"><img src="./_images/3.2.0-2.png" height="300px" /></div>
+    <div align="center"><img src="./_images/3.2.0-2.png" height="300px" /></div>
     - 实际任务中，属性个数可能非常多甚至超过样例数，此时可解出多个 ω^ 它们都能使均方误差最小化，选择哪一个解作为输出由归纳偏好决定，常见做法是**引入正则化(regularization)项**
 - 对数线性回归(log-linear regression)
   <div align="center"><img src="./_images/3.2.0-3.png" height="40px" /></div>
