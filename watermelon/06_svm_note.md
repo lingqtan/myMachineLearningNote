@@ -27,14 +27,14 @@
     - 局限1: 很难确定合适的核函数，使训练样本线性可分
     - 局限2: 即使找到这样一个核函数，也很难断定是否因为过拟合造成的
 - 缓解局限性的方法：**软间隔(soft margin)** 允许 SVM 在一些样本上出错
-  <div align="center"><img src="./_images/6.4.0-1.png" height="150px" /></div>
-  <div align="center"><img src="./_images/6.4.0-2.png" height="200px" /></div>
+  <div align="center"><img src="./_images/6.4.0-1.png" height="300px" /></div>
+  <div align="center"><img src="./_images/6.4.0-2.png" height="400px" /></div>
 - 但是**0/1损失函数**的数学性质不好(非凸非连续)，不易求解优化目标函数，需要找数学性质更好的**替代函数(surrogate loss)**来代替 l_0/1
 - 常用的替代函数
     - **hinge损失** l_hinge(z) = max(0, 1-z)
     - 指数损失 l_exp(z) = exp(-z)
     - 对率损失 l_log(z) = log(1 + exp(-z))
-      <div align="center"><img src="./_images/6.4.0-3.png" height="200px" /></div>
+      <div align="center"><img src="./_images/6.4.0-3.png" height="300px" /></div>
 - 用松弛变量(slack variable)表示对偶问题(略)
 - **正则化(regularization)**
     - 以上的优化目标可以分为两部分：第一部分描述划分超平面的"间隔"大小(SVM 的某种性质)；第二部分描述训练集上的误差
