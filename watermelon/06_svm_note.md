@@ -54,7 +54,7 @@
 ## 6.5 支持向量回归 SVR = Support Vector Regression
 
 - SVR 假设我们能容忍 f(x) 与 y 之间最多有 ε 的偏差，相当于以 f(x) 为中心，构建了一个宽度为 2ε 的间隔带，落入间隔带的样本点被认为预测正确
-  <div align="center"><img src="./_images/6.5.0-1.png" height="450px" /></div>
+  <div align="center"><img src="./_images/6.5.0-1.png" height="500px" /></div>
 - 支持向量落在 ε-间隔带之外
 
 ## 6.6 核方法
