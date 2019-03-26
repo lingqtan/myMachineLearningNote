@@ -40,8 +40,9 @@
 ## 7.3 朴素贝叶斯分类器
 
 - **属性条件独立性假设**：对已知类别，假设所有属性相互独立 (实质避开了属性上的联合概率)
-  <div align="center"><img src="./_images/7.3.0-1.png" height="100px" /></div>
+  <div align="center"><img src="./_images/7.3.0-1.png" height="90px" /></div>
   <div align="center"><img src="./_images/7.3.0-2.png" height="600px" /></div>
 - **拉普拉斯修正(Laplacian correction)** 对估计概率值进行平滑处理(smoothing)
     - 背景：若某个属性的属性值没在训练样本出现，则测试样本出现该属性值时估计概率值 = 0
-    <div align="center"><img src="./_images/7.3.0-3.png" height="600px" /></div>
+    - 先验假设：属性值与类别均匀分布
+      <div align="center"><img src="./_images/7.3.0-3.png" height="220px" /></div>
