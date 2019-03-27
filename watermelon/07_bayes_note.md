@@ -46,3 +46,17 @@
     - 背景：若某个属性的属性值没在训练样本出现，则测试样本出现该属性值时估计概率值 = 0
     - 先验假设：属性值与类别均匀分布
       <div align="center"><img src="./_images/7.3.0-3.png" height="220px" /></div>
+
+## 7.4 半朴素贝叶斯分类器
+
+- 属性条件独立性假设在现实中很难成立，改进：半朴素贝叶斯分类器(semi-naive Bayes classifiers)
+- "半朴素"基本想法：适当考虑一部分属性间的相互依赖信息，从而既不需进行完全联合概率计算，又不至于彻底忽略比较强的属性依赖关系
+- 常用策略：独依赖估计(One-Dependent Estimator, ODE) 假设每个属性除了类别 c 之外，最多仅依赖于一个其他属性
+  <div align="center"><img src="./_images/7.4.0-1.png" height="60px" /></div>
+- pa_i 称为属性 x_i 的父属性，若每个属性的父属性确定，则可用类似上述的方法求解 P(x_i|c,pa_i)，问题转化为如何确定每个属性的 pa_i
+    - SPODE(Super-Parent ODE) 假设所有属性都依赖同一个属性("超父")
+    - TAN(Tree Augmented naive Bayes) 以"条件互信息"为边权的属性节点完全图，求最大权生成树，得到每个节点的父节点
+    - AODE(Averaged ODE) 基于集成学习机制，尝试每个属性作为超父构建 SPODE，挑选合适的 SPODE 集成起来作为最终结果
+- 进一步提升泛化性能：贝叶斯网络
+
+## 7.5 贝叶斯网络
